@@ -8,6 +8,21 @@ function playGame(){
     let curRound = 0;
     let rounds = 5;
 
+    while(i<rounds){
+
+        humanChoice = getHumanChoice().toLowerCase();
+
+        computerChoice = getComputerChoice().toLowerCase();
+        
+        let win = playRound(humanChoice, computerChoice);
+
+        if(win===0){
+            humanScore++;
+        }else if(win===1){
+            computerScore++;
+        }
+        curRound++;
+    }    
 }
 
 
