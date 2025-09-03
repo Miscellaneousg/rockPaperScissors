@@ -1,3 +1,22 @@
+//Take use confirmation if they wanna play
+let answer = confirm("Hey! wanna rockPaperScissors?");
+//If user cancels, close the game don't call main function
+if(!answer){
+    alert("You have Quit the game, reload to play");
+}else{
+    //Keep playing game loop until cancel
+    while(true){
+    //call main function to play game one time
+    playGame();
+    //ask if user wants to play again
+    if(confirm("Wanna play again?")){
+        continue;
+    }
+    alert("Thank you for trying rockPaperScissors!");
+        break;
+    }
+}
+
 //main function
 function playGame(){
 
