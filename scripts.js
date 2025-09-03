@@ -45,9 +45,19 @@ function playGame(){
         }else if(win===1){
             computerScore++;
         }
+        liveScoreBoard(curRound,rounds,humanChoice,computerChoice,humanScore,computerScore);
         curRound++;
     }
     displayResult(humanScore,computerScore);    
+}
+
+//Display current round results
+function liveScoreBoard(curRound,rounds,humanChoice,computerChoice,humanScore,computerScore){
+
+        alert(`Round ${curRound+1}/${rounds}
+You: ${humanChoice}
+Computer: ${computerChoice}
+Score → Human: ${humanScore} | Computer: ${computerScore}`);
 }
 
 //Display the winner
