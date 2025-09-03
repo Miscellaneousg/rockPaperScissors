@@ -10,11 +10,16 @@ function playGame(){
 
     while(i<rounds){
 
-        humanChoice = getHumanChoice().toLowerCase();
+        humanChoice = getHumanChoice();
+
+        if(humanChoice === null){
+            alert("You have pressed cancel, game quitting...");
+            return;
+        }        
 
         computerChoice = getComputerChoice().toLowerCase();
         
-        let win = playRound(humanChoice, computerChoice);
+        let win = playRound(humanChoice.toLowerCase(), computerChoice);
 
         if(win===0){
             humanScore++;
@@ -42,7 +47,29 @@ function playRound(humanChoice, computerChoice){
 }
 
 //Function to return human choice (rock, paper or scissors).
-function getHumanChoice(){ 
+function getHumanChoice(curRound, rounds){ 
+
+    let humanChoice = null;
+
+    while(true){
+
+        humanChoice =  prompt(`Round: ${curRound+1}/${rounds}
+Rock, Paper, Scissors, Shoot!`,"");
+
+        if(humanChoice === null){
+            return null;
+        }
+        else if(humanChoice === ""){
+            alert(`Round: ${curRound+1}/${rounds}
+You haven't made a choice!`);
+            continue;
+        }else if(humanChoice.toLowerCase() !=="rock" && humanChoice.toLowerCase()!=="paper" && humanChoice.toLowerCase()!=="scissors"){   
+            alert(`Round: ${curRound+1}/${rounds}
+Wrong choice! acceptable choices are : \"rock\" or \"paper\" or \"scissors\"`);
+            continue;
+        }
+        return humanChoice;  
+    } 
 }
 
 //Function to return computer choice (rock, paper or scissors).
