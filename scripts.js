@@ -1,5 +1,13 @@
 //main function
 function playGame(){
+
+    let humanChoice = null;
+    let computerChoice = null;
+    let humanScore = 0;
+    let computerScore = 0;
+    let curRound = 0;
+    let rounds = 5;
+
 }
 
 
