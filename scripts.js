@@ -2,6 +2,7 @@
 let answer = confirm("Hey! wanna rockPaperScissors?");
 //If user cancels, close the game don't call main function
 if(!answer){
+    //exit game
     alert("You have Quit the game, reload to play");
 }else{
     //Keep playing game loop until cancel
@@ -12,6 +13,7 @@ if(!answer){
     if(confirm("Wanna play again?")){
         continue;
     }
+    //exit game
     alert("Thank you for trying rockPaperScissors!");
         break;
     }
@@ -19,35 +21,38 @@ if(!answer){
 
 //main function
 function playGame(){
-
+    //Declare variables
     let humanChoice = null;
     let computerChoice = null;
     let humanScore = 0;
     let computerScore = 0;
     let curRound = 0;
     let rounds = 5;
-
-    while(i<rounds){
-
+    //Round loop until all finish
+    while(curRound<rounds){
+        //Get human choice
         humanChoice = getHumanChoice(curRound,rounds);
-
+        //return the main function if user cancel
         if(humanChoice === null){
             alert("You have pressed cancel, game quitting...");
             return;
         }        
-
+        //Get computer choice
         computerChoice = getComputerChoice().toLowerCase();
-        
+        //Call function playRound to check who win the round
         let win = playRound(humanChoice.toLowerCase(), computerChoice);
-
+        //Update scores based on win, O is win for human and 1 for computer
         if(win===0){
             humanScore++;
         }else if(win===1){
             computerScore++;
         }
+        //Dispaly live score
         liveScoreBoard(curRound,rounds,humanChoice,computerChoice,humanScore,computerScore);
+        //Go to next round
         curRound++;
     }
+    //End Display result
     displayResult(humanScore,computerScore);    
 }
 
