@@ -10,7 +10,7 @@ function playGame(){
 
     while(i<rounds){
 
-        humanChoice = getHumanChoice();
+        humanChoice = getHumanChoice(curRound,rounds);
 
         if(humanChoice === null){
             alert("You have pressed cancel, game quitting...");
@@ -27,9 +27,25 @@ function playGame(){
             computerScore++;
         }
         curRound++;
-    }    
+    }
+    displayResult(humanScore,computerScore);    
 }
 
+//Display the winner
+function displayResult(humanScore,computerScore){
+
+    if(humanScore<computerScore){
+        alert(`The computer won
+score: human = ${humanScore}, computer = ${computerScore}`);
+    }else if(humanScore==computerScore){
+        alert(`Match Draw
+score: human = ${humanScore}, computer = ${computerScore}`);
+    }
+    else{
+        alert(`Congratulations! 🎉 you won the match
+score: human = ${humanScore}, computer = ${computerScore}`);
+    }    
+}
 
 //Function to check round winner 
 function playRound(humanChoice, computerChoice){
