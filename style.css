@@ -1,0 +1,81 @@
+html{
+    box-sizing: border-box;
+    height:100vh;
+    width: 100vw;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+@font-face {
+  font-family: Born2bSportyV2;
+  src: url(./fonts/Born2bSportyV2.ttf);
+}
+
+@font-face {
+    font-family:"Departure Mono" ;
+    src: url(./fonts/DepartureMono-1.500/DepartureMono-1.500/DepartureMono-Regular.woff2);
+}
+
+body{
+    background-color:#8bffd6 ;
+    height: 100%;
+    display: flex;
+    margin:0;
+    padding:0;
+    flex-direction: column;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 6em;
+    text-align: left;
+    margin-top:0px;
+    color: rgb(118, 118, 196);
+    font-family: Born2bSportyV2;
+    text-shadow: 10px -10px black;
+}
+
+.home{
+    display: flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+#play{
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    border-style:dashed;
+    border-radius: 50%;
+    font-family: "Departure Mono";
+    font-size:150%;
+    border-color: brown;
+    color: purple;
+    font-weight:bolder;
+}
+
+.footer{
+    font-family: Born2bSportyV2;
+    font-size:x-large;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color:#8bffd6;
+    width: 100%;
+    bottom: 0%;
+    margin-top: auto;
+    padding-top: 2px;
+}
+
+.footer a{
+    color: #ffffff;
+    mask: linear-gradient(black,black,transparent);
+    font-family: "Departure Mono";
+}
