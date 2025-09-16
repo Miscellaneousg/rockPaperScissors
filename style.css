@@ -48,7 +48,6 @@ h1{
     font-size:5em;
     text-align:center;
     text-shadow: 2px -2px white;
-    z-index: 3;
 }
 
 .main{
@@ -64,7 +63,6 @@ h1{
     gap:16px;
     position: relative;
     overflow: hidden;
-    z-index: 1;
 }
 
 p{
@@ -97,7 +95,7 @@ p{
   -webkit-transform: rotate(-30deg);
 }
 
-button{
+button#play{
     cursor: pointer;
     font-family: "Departure Mono";
     font-size:150%;
@@ -106,15 +104,15 @@ button{
     width: 100px;
     color: rgb(118, 118, 196);
     text-shadow: 2px -1px white;     
-    border:3px dotted black;
-    border-left:4px solid red;
-    border-radius: 50%;
+    outline: 4px solid brown;
+    border:2px solid red;
+    border-bottom:45px solid red;
+    border-radius: 3%;
     background-color:black;
-    background-clip:padding-box;
 }
 
-.ripple,button.glow{
-    box-shadow: 0px 0 50px 5px red;
+.ripple,#play.glow,#exit.glow{
+    box-shadow: 0px 0 50px 15px red;
 }
 
 .ripple {
@@ -123,33 +121,42 @@ button{
     height: 100px;
     background-color: black;
     border-radius: 50%;
-    transform: scale(1);
     transition: transform 1s ease; 
     transform-origin: 50% 50%;
-    z-index: 2;
 }
 
 .ripple.expanding{
-    transform: scale(20);
+    transform: scale3d(20, 20, 1);
 }
 
 .game{
     display: none;
     height: 100%;
-    outline:3px dashed white;
+    outline:2px dashed #8bffd6;;
     outline-offset: -10px;
     background-color: black;
+    /* position: relative; */
+    flex-direction: column;
+}
+
+.screen{
+    flex:1;
+}
+
+.nav{
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
-    position: relative;
 }
 
 #two .arc{
-    border-width: 0 0 0 2px;
+    border-width: 0 0 0 4px;
     border-color: white;
     border-radius: 0;
     transform: rotate(90deg);
-    margin-bottom: -40px;
+    margin-bottom: -34px;
     margin-right: 20px;
 }
 
@@ -157,18 +164,25 @@ button{
     border-color:white;
     transform: rotate(-45deg);
     margin-right: 16px;
+    margin-bottom: 5px;
 }
 
-button.exit{
-    background-color: white;
+button#exit{
+    cursor: pointer;
+    color: rgb(118, 118, 196);
+    font-family: "Departure Mono";
+    font-weight:bolder;
+    font-size:160%;
+    border:2px solid black;
+    border-left:4px solid red;
+    border-right:4px solid red;
+    border-radius: 50%;
+    background-color: black;
     margin-right: 16px;
-    margin-bottom: 16px;;
+    margin-bottom: 16px;
     height: 70px;
     width: 70px;
-    font-size:120%;
-    text-shadow: 2px -1px black;
-    background-clip:unset;
-    border-width: 2px;;
+    text-shadow: 2px -1px white;
 }
 
 .footer{

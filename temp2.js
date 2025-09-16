@@ -1,4 +1,6 @@
-const buttons = Array.from(document.querySelectorAll("button"));
+const play = document.querySelector("#play");
+const exit = document.querySelector("#exit");
+const buttons = [play,exit];
 const container = document.querySelector(".home");
 const circle = document.querySelector("#circle");
 
@@ -36,17 +38,17 @@ buttons[1].addEventListener("click",()=>{
     circle.classList.toggle("expanding");
     setTimeout(() => {
         circle.classList.toggle("ripple");
-    },800);
+    },900);
 });
 
 buttons.forEach((button)=>{
     button.addEventListener("mouseenter",()=>{
     button.classList.toggle("glow");
-    updateCircleGeometry();
+    button.style.color="red";
     });
     button.addEventListener("mouseleave",()=>{
     button.classList.toggle("glow");
-    updateCircleGeometry();
+    button.style.color="rgb(118, 118, 196)";
     });
 });
 
@@ -54,6 +56,20 @@ buttons.forEach((button)=>{
     // container.nextElementSibling.style.display="flex";
 
 
+//-----------------------------------------------------------------------//
 
+//Function to return computer choice (rock, paper or scissors).
+function getComputerChoice(){
+
+    let random = Math.floor(Math.random()*3);
+
+    if(random===0){
+        return "rock";
+    }else if(random===1){
+        return "paper";
+    }else{
+        return "scissors";
+    } 
+}
 
 
