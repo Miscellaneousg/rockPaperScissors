@@ -2,6 +2,7 @@ html{
     box-sizing:border-box;
     height:100vh;
     width: 100vw;
+    display:flex;
 }
 
 *,
@@ -16,15 +17,16 @@ html{
 }
 
 @font-face {
-    font-family:"Departure Mono" ;
+    font-family:"Departure Mono";
     src: url(./fonts/DepartureMono-1.500/DepartureMono-1.500/DepartureMono-Regular.woff2);
 }
 
 body{
+    font-family:"Departure Mono";
     margin:0;
     padding:0;
     text-rendering:geometricPrecision;
-    background-color:#8bffd6;
+    background-color: black;
     height: 100%;
     width: 100%;
     display: flex;
@@ -32,12 +34,11 @@ body{
 }
 
 header{
-    border:3px dashed black;
+    border:3px dashed #8bffd6;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-clip: content-box;
 }
 
 h1{
@@ -45,13 +46,14 @@ h1{
     color: rgb(118, 118, 196);
     mask: linear-gradient(black,black,transparent);
     font-family: Born2bSportyV2;
-    font-size:5em;
+    font-size:4em;
     text-align:center;
     text-shadow: 2px -2px white;
 }
 
 .main{
     flex:1;
+    padding: 10px;
 }
 
 .home{
@@ -65,14 +67,14 @@ h1{
     overflow: hidden;
 }
 
-p{
+p#one,p#two{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .arc{
-    border: dotted black;
+    border:dotted #8bffd6;
     border-radius: 50%;
     height: 100px;
     padding: 20px;
@@ -84,7 +86,7 @@ p{
 }
 
 .arrow{
-  border: solid black;
+  border: solid #8bffd6;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 5px;
@@ -96,6 +98,7 @@ p{
 }
 
 button#play{
+    position: relative;
     cursor: pointer;
     font-family: "Departure Mono";
     font-size:150%;
@@ -109,10 +112,13 @@ button#play{
     border-bottom:45px solid red;
     border-radius: 3%;
     background-color:black;
+    transition: box-shadow 1s ease, color 0.5s ease, transform 0.5s ease; 
 }
 
-.ripple,#play.glow,#exit.glow{
-    box-shadow: 0px 0 50px 15px red;
+#play:hover,#exit:hover{
+    transform: rotate(360deg);
+    box-shadow: 0px 0px 100vw 100vw grey;
+    color:red;
 }
 
 .ripple {
@@ -123,24 +129,128 @@ button#play{
     border-radius: 50%;
     transition: transform 1s ease; 
     transform-origin: 50% 50%;
+    border:1px dashed #8bffd6;
+    box-shadow: 0px 0px 50px 15px red;
 }
 
 .ripple.expanding{
     transform: scale3d(20, 20, 1);
 }
 
-.game{
+div.game{
+    border:3px dashed #8bffd6;
     display: none;
     height: 100%;
-    outline:2px dashed #8bffd6;;
-    outline-offset: -10px;
-    background-color: black;
-    /* position: relative; */
     flex-direction: column;
+    overflow: hidden;
 }
 
-.screen{
+.game .screen{
+    border-bottom:3px dashed #8bffd6;
     flex:1;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+}
+
+img.game{
+    min-width: 20vh;
+    height: 35vh;
+    width: 20vw;
+}
+
+h3{
+    font-family: Born2bSportyV2;
+    font-weight:lighter;
+    font-size:x-large;
+    color:white;
+}
+
+#computer{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    border:2px solid red;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    box-shadow:0px 0px 100px red inset;
+}
+
+#player{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    border:2px solid cyan;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    box-shadow:0px 0px 100px blue inset;
+}
+
+#score{
+    display: flex;
+    flex:1;
+    outline:2px solid white;
+    justify-content: center;
+    padding:10px;
+    flex-direction: column;
+
+}
+
+#setting{
+    background-color: rgba(124, 124, 124, 0.382);
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    padding: 5%;
+    border: 3px dashed #8bffd6;
+    box-shadow:0px 0px 100px blue;
+}
+
+label{
+    font-size:xx-large;
+    align-self: center;
+    color: #8bffd6;
+}
+
+#round{
+    accent-color: white;
+    transition: accent-color .2s ease;
+}
+
+#round:hover{
+    accent-color:red;
+}
+
+#setting button{
+    font-family: "Departure Mono";
+    font-weight:bolder;
+    font-size:160%;
+    background-color: rgb(30, 30, 30);
+    color: rgb(118, 118, 196);
+    border: 2px dashed #8bffd6;
+    text-shadow: 2px -1px white;
+    transition: color 0.5s ease;
+}
+
+#setting button:hover{
+    color:red;
+}
+
+#buttons{
+    display: flex;
+    align-self: end;
+    flex-wrap: wrap;
+    gap:8px;
+}
+
+#buttons button{
+    font-family: "Departure Mono";
+    font-size:large;
+    font-weight: bolder;
 }
 
 .nav{
@@ -152,19 +262,15 @@ button#play{
 }
 
 #two .arc{
-    border-width: 0 0 0 4px;
-    border-color: white;
     border-radius: 0;
     transform: rotate(90deg);
-    margin-bottom: -34px;
+    margin-bottom: -40px;
     margin-right: 20px;
 }
 
 #two .arrow{
-    border-color:white;
     transform: rotate(-45deg);
     margin-right: 16px;
-    margin-bottom: 5px;
 }
 
 button#exit{
@@ -178,20 +284,20 @@ button#exit{
     border-right:4px solid red;
     border-radius: 50%;
     background-color: black;
-    margin-right: 16px;
-    margin-bottom: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     height: 70px;
     width: 70px;
     text-shadow: 2px -1px white;
+    transition: box-shadow 1s ease, color 0.5s ease, transform 0.5s ease;  
 }
 
 .footer{
-    border:3px dashed black;
+    border:3px dashed #8bffd6;
     font-family: Born2bSportyV2;
     font-size:x-large;
     text-align: center;
     background-color: black;
-    background-clip: content-box;
     color:#8bffd6;
 }
 

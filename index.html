@@ -13,7 +13,7 @@
         <header><h1>Rock Paper Scissors</h1></header>
         <div class="main">
             <div class="home">
-                <p>
+                <p id="one">
                     <i id="one" class="arc"></i>
                     <i class="arrow right"></i>
                 </p>
@@ -21,7 +21,28 @@
                 <div id="circle"></div>                
             </div>
             <div class="game">
-                <div class="screen"></div>
+                <div class="screen">
+                    <div id="computer">
+                        <img class="game" src="./images/milesEdgeworth.png">
+                        <h3>computer</h3>
+                    </div>
+                    <div id="player">
+                        <img class="game" src="./images/phoenixWright.png">
+                        <h3>player</h3>
+                    </div>
+                    <div id="score">
+                        <div id="setting">
+                            <label class="round">Total Rounds : 1</label>
+                            <input id="round" class="round" type="range" value="1" min="1" max="9" maxlength="1">
+                            <button>DONE</button>
+                        </div>
+                        <div id="buttons">
+                            <button id="rock">rock</button>
+                            <button id="paper">paper</button>
+                            <button id="scissor">scissor</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="nav">
                     <p id="two">
                         <i class="arc"></i>
