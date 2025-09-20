@@ -112,7 +112,7 @@ button#play{
     border-bottom:45px solid red;
     border-radius: 3%;
     background-color:black;
-    transition: box-shadow 1s ease, color 0.5s ease, transform 0.5s ease; 
+    transition: box-shadow .8s ease, color 0.5s ease, transform 0.4s ease; 
 }
 
 #play:hover,#exit:hover{
@@ -129,8 +129,8 @@ button#play{
     border-radius: 50%;
     transition: transform 1s ease; 
     transform-origin: 50% 50%;
-    border:1px dashed #8bffd6;
-    box-shadow: 0px 0px 50px 15px red;
+    border:5px solid pink;
+    box-shadow: 0px 0px 50px 10px red;
 }
 
 .ripple.expanding{
@@ -157,8 +157,9 @@ div.game{
 
 img.game{
     min-width: 20vh;
-    height: 35vh;
+    height: 40vh;
     width: 20vw;
+    transition: height 0.3s ease;
 }
 
 h3{
@@ -190,6 +191,11 @@ h3{
     box-shadow:0px 0px 100px blue inset;
 }
 
+#computer img.grow,#player img.grow{
+    height: 15vh;
+
+}
+
 #score{
     display: flex;
     flex:1;
@@ -197,7 +203,25 @@ h3{
     justify-content: center;
     padding:10px;
     flex-direction: column;
+}
 
+h2{
+    margin:0;
+}
+
+#digits{
+    display: none;
+    white-space: pre;
+    margin-bottom: auto;
+    color:white;
+    align-self: center;
+    margin:auto;
+}
+
+#digits .computer, 
+#digits .player{
+    padding: 0;
+    margin: 0;
 }
 
 #setting{
@@ -241,9 +265,10 @@ label{
 }
 
 #buttons{
-    display: flex;
-    align-self: end;
-    flex-wrap: wrap;
+    display: none;
+    margin-top: auto;
+    justify-content: center;
+    flex-direction: column;
     gap:8px;
 }
 
@@ -289,7 +314,7 @@ button#exit{
     height: 70px;
     width: 70px;
     text-shadow: 2px -1px white;
-    transition: box-shadow 1s ease, color 0.5s ease, transform 0.5s ease;  
+    transition: box-shadow 0.8s ease, color 0.5s ease, transform 0.4s ease;  
 }
 
 .footer{

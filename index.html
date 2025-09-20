@@ -4,7 +4,7 @@
         <title>RPS The game</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="./temp2.js" defer></script>
+        <script src="./scripts.js" defer></script>
         <link rel="preload" href="./fonts/DepartureMono-1.500/DepartureMono-1.500/DepartureMono-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
         <link rel="preload" href="./fonts/Born2bSportyV2.ttf" type="font/woff2" as="font" crossorigin="anonymous">
         <link rel="stylesheet" href="./style.css">
@@ -35,6 +35,11 @@
                             <label class="round">Total Rounds : 1</label>
                             <input id="round" class="round" type="range" value="1" min="1" max="9" maxlength="1">
                             <button>DONE</button>
+                        </div>
+                        <div id="digits">
+                            <h2></h2>
+                            <p class="computer"></p>
+                            <p class="player">player Choice = <br>player Score  = </p>
                         </div>
                         <div id="buttons">
                             <button id="rock">rock</button>
