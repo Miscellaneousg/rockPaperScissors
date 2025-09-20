@@ -48,10 +48,10 @@ buttons1[1].addEventListener("click",()=>{
     end();
 });
 
-//debug
+// debug
 // container.style.display="none";
 // container.nextElementSibling.style.display="flex";
-//====
+// ====
 
 //-----------------------------------------------------------------------//
 
@@ -80,8 +80,8 @@ function init(round){
 
 function updateScore(){
     document.querySelector("#digits").firstElementChild.textContent=`round ${curRound}/${rounds}`;
-    document.querySelector("#digits .computer").textContent=`Computer Choice = ${computerChoice}\nComputer Score  = ${computerScore}`;
-    document.querySelector("#digits .player").textContent=`Player Choice = ${humanChoice}\nPlayer Score  = ${humanScore}`;
+    document.querySelector("#digits .computer").textContent=`Computer:\nLast Choice = ${computerChoice}\nTotal Score  = ${computerScore}`;
+    document.querySelector("#digits .player").textContent=`Player:\nLast Choice = ${humanChoice}\nTotal Score  = ${humanScore}`;
 }
 
 const setting = document.querySelector("#setting");
@@ -99,10 +99,10 @@ document.querySelector("#setting button").addEventListener("click",()=>{
     init(round.value);
 });
 
-//debug
+// debug
 // setting.style.display="none";
 // init(round.value);
-//====
+// ====
 
 //getting human choice
 Array.from(buttons2).forEach(button => {
@@ -189,10 +189,12 @@ function playRound(humanChoice, computerChoice){
 
 function manageResult(){
         if(computerScore>humanScore){
+            document.querySelector("#digits").firstElementChild.textContent=`COMPUTER WIN! [${curRound}/${rounds}]`;
             player.parentElement.style.display="none";
             computer.setAttribute("src",`./images/milesEdgeworth.png`);
             computer.nextElementSibling.textContent="Winner!";
         }else if(computerScore<humanScore){
+            document.querySelector("#digits").firstElementChild.textContent=`PLAYER WIN! [${curRound}/${rounds}]`;
             computer.parentElement.style.display="none";
             player.setAttribute("src",`./images/phoenixWright.png`);
             player.nextElementSibling.textContent="Winner!";

@@ -211,11 +211,9 @@ h2{
 
 #digits{
     display: none;
-    white-space: pre;
-    margin-bottom: auto;
+    white-space: pre-line;
     color:white;
     align-self: center;
-    margin:auto;
 }
 
 #digits .computer, 
