@@ -169,6 +169,12 @@ h3{
     color:white;
 }
 
+#icons{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+}
+
 #computer{
     display: flex;
     flex-direction: column;
@@ -211,6 +217,7 @@ h2{
 
 #digits{
     display: none;
+    margin:auto;
     white-space: pre-line;
     color:white;
     align-self: center;
@@ -264,7 +271,7 @@ label{
 
 #buttons{
     display: none;
-    margin-top: auto;
+    /* margin-top: auto; */
     justify-content: center;
     flex-direction: column;
     gap:8px;

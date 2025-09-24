@@ -116,6 +116,7 @@ Array.from(buttons2).forEach(button => {
 //call to end the game
 function end(){
     //resetting...
+    document.querySelector("#icons").style.display="flex";
     player.parentElement.style.display="flex";
     computer.parentElement.style.display="flex";
 
@@ -200,8 +201,7 @@ function manageResult(){
             player.nextElementSibling.textContent="Winner!";
         }else{
             document.querySelector("#digits").firstElementChild.textContent=`MATCH DRAW! [${curRound}/${rounds}]`;
-            player.parentElement.style.display="none";
-            computer.parentElement.style.display="none";
+            document.querySelector("#icons").style.display="none";
         }
 }
 
