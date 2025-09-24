@@ -36,7 +36,7 @@ body{
 header{
     border:3px dashed #8bffd6;
     background-color: black;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: flex-start;
 }
@@ -316,6 +316,7 @@ button#exit{
 }
 
 .footer{
+    display: none;
     border:3px dashed #8bffd6;
     font-family: Born2bSportyV2;
     font-size:x-large;
