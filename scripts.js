@@ -90,7 +90,7 @@ const round = document.querySelector("input#round");
 const computer = document.querySelector("#computer img");
 const player = document.querySelector("#player img")
 
-const buttons2 = document.querySelectorAll("#buttons button");
+const buttons2 = document.querySelector("#buttons");
 
 //getting required rounds amount information.
 round.addEventListener("input", ()=>document.querySelector("label.round").textContent=`Total Rounds : ${round.value}`);
@@ -105,13 +105,21 @@ document.querySelector("#setting button").addEventListener("click",()=>{
 // ====
 
 //getting human choice
-Array.from(buttons2).forEach(button => {
-    button.addEventListener("click",()=>{
-        humanChoice = button.textContent;
-        computerChoice = getComputerChoice();
-        playRound(humanChoice,computerChoice);
-    })
+
+buttons2.addEventListener("click", (event)=>{
+    let button = event.target;
+    humanChoice = button.textContent;
+    computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice);   
 });
+
+// Array.from(buttons2).forEach(button => {
+//     button.addEventListener("click",()=>{
+//         humanChoice = button.textContent;
+//         computerChoice = getComputerChoice();
+//         playRound(humanChoice,computerChoice);
+//     })
+// });
 
 //call to end the game
 function end(){
